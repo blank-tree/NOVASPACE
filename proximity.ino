@@ -44,7 +44,7 @@ void proximityLoop() {
 				if (currentTime - sensorTimer > INTERVAL_SENSOR_SEND) {
 					// give a high output signal to the trigger
 					digitalWrite(PIN_TRIG, HIGH);
-					
+
 					updateSensorStatus();
 				}
 				break;
@@ -67,8 +67,8 @@ void proximityLoop() {
 					lastMeasurement = currentTime;
 				}
 				break;
+		}
 	}
-}
 }
 
 /**
