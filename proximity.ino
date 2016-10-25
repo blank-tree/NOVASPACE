@@ -24,8 +24,6 @@
  void proximityLoop() {
  	if (currentTime - lastMeasurement > INTERVAL_SENSOR) {
 
- 		long duration;
-
  		switch (sensorStatus) {
 
  			case 0:
@@ -44,7 +42,7 @@
 			case 2:
 			if (currentTime - sensorTimer > INTERVAL_SENSOR_RECEIVE) {
 				digitalWrite(PIN_TRIG, LOW);
-				duration = pulseIn(echoPin, HIGH);
+				long duration = pulseIn(echoPin, HIGH);
 				distance = (duration/2) / 29.1;
 				updateSensorStatus();
 			}
