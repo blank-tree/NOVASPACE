@@ -1,6 +1,6 @@
 /**
 * NOVASPACE - Proximity
-* @author: Fernando Obieta - blanktree.ch
+* @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
 * @date: 161025
 * @version: 0.5
 */
