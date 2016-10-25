@@ -9,6 +9,8 @@
 const int PIN_LINEARACTUATOR = 5; // Digital PWM Pin
 const int LA_MIN = 1050;
 const int LA_MAX = 2000;
+const int MORPH_FADE_UP = 2;
+const int MORPH_FADE_DOWN = 1;
 
 // Variables
 Servo linearactuator;
@@ -32,9 +34,9 @@ void morphLoop() {
 	// increase or decrease the linear actuator value and make sure
 	// that the min of 0 and the max of 180 won't get overstepped 
 	if (direction) {
-		LAvalue = LAvalue + 2 > 180 ? 180 : LAvalue + 2;
+		LAvalue = LAvalue + MORPH_FADE_UP > 180 ? 180 : LAvalue + MORPH_FADE_UP;
 	} else {
-		LAvalue = LAvalue - 1 < 0 ? 0 : LAvalue - 1;
+		LAvalue = LAvalue - MORPH_FADE_DOWN < 0 ? 0 : LAvalue - MORPH_FADE_DOWN;
 	}
 
 	// position the linear actuator

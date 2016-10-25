@@ -2,7 +2,7 @@
  * NOVASPACE
  * @author: Fernando Obieta - blanktree.ch
  * @date: 161025
- * @version: 0.10
+ * @version: 0.12
  */
 
 // Includes
@@ -30,6 +30,7 @@ void setup() {
 	proximitySetup();
 	morphSetup();
 	lightSetup();
+	soundSetup();
 }
 
 void loop() {
@@ -41,5 +42,6 @@ void loop() {
 	proximityLoop();
 	morphLoop();
 	lightLoop();
+	soundLoop();
 	
 }
