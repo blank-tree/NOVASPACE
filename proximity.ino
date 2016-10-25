@@ -2,7 +2,7 @@
  * NOVASPACE - Proximity
  * @author: Fernando Obieta - blanktree.ch
  * @date: 161025
- * @version: 0.4
+ * @version: 0.5
  */
 
  const int PIN_TRIG = 6;
@@ -45,12 +45,10 @@
 				long duration = pulseIn(echoPin, HIGH);
 				distance = (duration/2) / 29.1;
 				updateSensorStatus();
+				lastMeasurement = currentTime;
 			}
 			break;
 		}
-
-		lastMeasurement = currentTime;
-
 	}
 }
 
