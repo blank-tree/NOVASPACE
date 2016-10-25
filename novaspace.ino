@@ -29,6 +29,7 @@ void setup() {
 	// start setup function of all other classes
 	proximitySetup();
 	morphSetup();
+	lightSetup();
 }
 
 void loop() {
@@ -39,5 +40,6 @@ void loop() {
 	// activate all other loops of the other classes
 	proximityLoop();
 	morphLoop();
+	lightLoop();
 	
 }
