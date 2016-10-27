@@ -6,8 +6,8 @@
 */
 
 // Constants
-const int PIN_TRIG = 6;
-const int PIN_ECHO = 5;
+const int PIN_TRIG = 8;
+const int PIN_ECHO = 9;
 const int INTERVAL_SENSOR = 250;
 const int INTERVAL_SENSOR_SEND = 2;
 const int INTERVAL_SENSOR_RECEIVE = 10;
@@ -56,7 +56,7 @@ void proximityLoop() {
 					digitalWrite(PIN_TRIG, LOW);
 
 					// read the pulse in of the previously given trigger
-					long duration = pulseIn(echoPin, HIGH);
+					long duration = pulseIn(PIN_ECHO, HIGH);
 
 					// calculate the distance
 					distance = (duration/2) / 29.1;

@@ -16,10 +16,10 @@ int LED_VALUES[LEDS_ARRAYSIZE];
 
 void lightSetup() {
 
-	for(int i=0; i<;LEDS_ARRAYSIZE i++){
+	for(int i=0; i<LEDS_ARRAYSIZE; i++){
 
 		// init all leds as output
-		pinMode(PINS_LEDS, OUTPUT);
+		pinMode(PINS_LEDS[i], OUTPUT);
 
 		// init all variables
 	    LED_VALUES[i] = 0;
