@@ -1,13 +1,13 @@
 /**
 * NOVASPACE - Proximity
 * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
-* @date: 161025
-* @version: 0.5
+* @date: 161027
+* @version: 0.7
 */
 
 // Constants
-const int PIN_TRIG = 8;
-const int PIN_ECHO = 9;
+const int PIN_TRIG = 5;
+const int PIN_ECHO = 3;
 const int INTERVAL_SENSOR = 250;
 const int INTERVAL_SENSOR_SEND = 2;
 const int INTERVAL_SENSOR_RECEIVE = 10;
@@ -18,6 +18,9 @@ int sensorTimer;
 unsigned long lastMeasurement;
 
 void proximitySetup() {
+
+	// Activate Pin
+	pinMode(PIN_TRIG, OUTPUT);
 
 	// init variables
 	sensorStatus = 0;
@@ -37,6 +40,7 @@ void proximityLoop() {
 				digitalWrite(PIN_TRIG, LOW);
 
 				updateSensorStatus();
+
 				break;
 
 			case 1:
@@ -60,6 +64,8 @@ void proximityLoop() {
 
 					// calculate the distance
 					distance = (duration/2) / 29.1;
+
+					Serial.println(distance);
 
 					updateSensorStatus();
 

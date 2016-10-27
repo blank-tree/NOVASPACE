@@ -1,17 +1,18 @@
 /**
  * NOVASPACE
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
- * @date: 161025
- * @version: 0.15
+ * @date: 161027
+ * @version: 0.18
  */
 
 // Includes
 #include <Servo.h>
+#include "DualVNH5019MotorShield.h"
 
 // Constants
 const int INTERVAL_UPDATE_MORPH = 125; // in ms
 const int INTERVAL_UPDATE_LS = 375; // in ms
-const int EMPTY_DISTANCE = 100; // in cm
+const int EMPTY_DISTANCE = 50; // in cm
 
 // Variables
 unsigned long currentTime;
@@ -35,7 +36,7 @@ void setup() {
 	// start setup function of all other classes
 	proximitySetup();
 	morphSetup();
-	lightSetup();
+	// lightSetup();
 	soundSetup();
 }
 
@@ -58,7 +59,7 @@ void loop() {
 
 	// every light and sound interval activate the light and sound loop
 	if (currentTime - lastUpdateLS > INTERVAL_UPDATE_LS) {
-		lightLoop();
+		// lightLoop();
 		soundLoop();
 		lastUpdateLS = currentTime;
 	}	
