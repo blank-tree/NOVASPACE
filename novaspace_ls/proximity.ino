@@ -6,7 +6,7 @@
 */
 
 // Constants
-const int PIN_TRIG = 5;
+const int PIN_TRIG = 13;
 const int PIN_ECHO = 3;
 const int INTERVAL_SENSOR = 250;
 const int INTERVAL_SENSOR_SEND = 2;
