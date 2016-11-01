@@ -2,7 +2,7 @@
  * NOVASPACE - Light & Sound
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
  * @date: 161101
- * @version: 0.22
+ * @version: 0.23
  */
 
 // Includes
@@ -11,7 +11,7 @@
 
 // Constants
 const int INTERVAL_UPDATE_LS = 375; // in ms
-const int EMPTY_DISTANCE = 50; // in cm
+const int EMPTY_DISTANCE = 150;
 
 // Variables
 unsigned long currentTime;
@@ -42,7 +42,7 @@ void loop() {
 	currentTime = millis();
 
 	// is the distance shorter than the empty distance
-	direction = distance < EMPTY_DISTANCE;
+	direction = distance > EMPTY_DISTANCE;
 
 	// get the current reading of the proximity sensor for the distance variable
 	proximityLoop();

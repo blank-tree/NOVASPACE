@@ -1,8 +1,8 @@
 /**
  * NOVASPACE - Morph
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
- * @date: 161028
- * @version: 0.22
+ * @date: 161101
+ * @version: 0.24
  */
 
 // Includes
@@ -11,7 +11,7 @@
 // Constants
 const int INTERVAL_UPDATE_MORPH = 125; // in ms
 const int INTERVAL_UPDATE_LS = 375; // in ms
-const int EMPTY_DISTANCE = 70; // in cm
+const int EMPTY_DISTANCE = 150;
 
 // Variables
 unsigned long currentTime;
@@ -43,14 +43,10 @@ void loop() {
 	currentTime = millis();
 
 	// is the distance shorter than the empty distance
-	direction = distance < EMPTY_DISTANCE;
+	direction = distance > EMPTY_DISTANCE;
 
 	// get the current reading of the proximity sensor for the distance variable
 	proximityLoop();
 
-	// every morph interval activate the morph loop
-	// if (currentTime - lastUpdateMorph > INTERVAL_UPDATE_MORPH) {
-		morphLoop();
-	//	lastUpdateMorph = currentTime;
-	// }
+	morphLoop();
 }
