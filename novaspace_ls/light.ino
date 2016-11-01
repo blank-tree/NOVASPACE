@@ -1,13 +1,14 @@
 /**
  * NOVASPACE - Light
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
- * @date: 161025
- * @version: 0.5
+ * @date: 161101
+ * @version: 0.8
  */
 
 // Constants
+const int PIN_DMX_CONTROLLER = 11;
 const int LEDS_ARRAYSIZE = 3;
-const int PINS_LEDS[LEDS_ARRAYSIZE] = {4, 5, 6}; // analog pins
+const int LEDS_NO[LEDS_ARRAYSIZE] = {1, 2, 3}; // analog pins
 const int LEDS_FADE_UP = 5;
 const int LEDS_FADE_DOWN = 3;
 
@@ -16,10 +17,9 @@ int LED_VALUES[LEDS_ARRAYSIZE];
 
 void lightSetup() {
 
-	for(int i=0; i<LEDS_ARRAYSIZE; i++){
+	DmxSimple.usePin(PIN_DMX_CONTROLLER);
 
-		// init all leds as output
-		pinMode(PINS_LEDS[i], OUTPUT);
+	for(int i=0; i<LEDS_ARRAYSIZE; i++){
 
 		// init all variables
 	    LED_VALUES[i] = 0;
@@ -61,7 +61,7 @@ void lightLoop() {
 
 	// activate all leds with the correct brightness
 	for(int i=0; i<LEDS_ARRAYSIZE; i++){
-	    analogWrite(PINS_LEDS[i], LED_VALUES[i]);
+	    DmxSimple.write(LEDS_NO[i], LED_VALUES[i]);
 	}
 	
 }

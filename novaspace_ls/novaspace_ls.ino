@@ -1,11 +1,12 @@
 /**
  * NOVASPACE - Light & Sound
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
- * @date: 161028
- * @version: 0.20
+ * @date: 161101
+ * @version: 0.22
  */
 
 // Includes
+#include <DmxSimple.h>
 #include <Servo.h>
 
 // Constants
