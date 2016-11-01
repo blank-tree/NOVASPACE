@@ -44,7 +44,7 @@ void soundLoop() {
 	}
 
 	// Write the values to the servos
-	volume.write(volumeValue);
-	ctrl1.write(ctrl1Value);
+	volume.write(map(volumeValue, 0, 180, 180, 0));
+	ctrl1.write(map(ctrl1Value, 0, 180, 180, 0));
 
 }

@@ -2,7 +2,7 @@
  * NOVASPACE - Light
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
  * @date: 161101
- * @version: 0.8
+ * @version: 0.9
  */
 
 // Constants
@@ -35,13 +35,9 @@ void lightLoop() {
 		// iterate through all leds
 		for(int i=0; i< LEDS_ARRAYSIZE; i++){
 
-			// randomize if the value gets changed
-			if (random(1)) {
-
-				// increase or decrease the LED value and make sure
-				// that the min of 0 and the max of 255 won't get overstepped 
-				LED_VALUES[i] = LED_VALUES[i] + LEDS_FADE_UP > 255 ? 255 : LED_VALUES[i] + LEDS_FADE_UP;
-			}
+			// increase or decrease the LED value and make sure
+			// that the min of 0 and the max of 255 won't get overstepped 
+			LED_VALUES[i] = LED_VALUES[i] + LEDS_FADE_UP > 255 ? 255 : LED_VALUES[i] + LEDS_FADE_UP;
 		    
 		}
 	} else {
@@ -49,19 +45,16 @@ void lightLoop() {
 		// iterate through all leds
 		for(int i=0; i< LEDS_ARRAYSIZE; i++){
 
-			// randomize if the value gets changed
-			if (random(1)) {
-
-				// increase or decrease the LED value and make sure
-				// that the min of 0 and the max of 255 won't get overstepped 
-				LED_VALUES[i] = LED_VALUES[i] - LEDS_FADE_DOWN < 0 ? 0 : LED_VALUES[i] - LEDS_FADE_DOWN;
-			}
+			// increase or decrease the LED value and make sure
+			// that the min of 0 and the max of 255 won't get overstepped 
+			LED_VALUES[i] = LED_VALUES[i] - LEDS_FADE_DOWN < 0 ? 0 : LED_VALUES[i] - LEDS_FADE_DOWN;
 		}
 	}
 
 	// activate all leds with the correct brightness
 	for(int i=0; i<LEDS_ARRAYSIZE; i++){
 	    DmxSimple.write(LEDS_NO[i], LED_VALUES[i]);
+	    // Serial.println(LED_VALUES[i]);
 	}
 	
 }

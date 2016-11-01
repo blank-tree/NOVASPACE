@@ -62,8 +62,12 @@ void proximityLoop() {
 					// read the pulse in of the previously given trigger
 					long duration = pulseIn(PIN_ECHO, HIGH);
 
+					long newDistance = (duration/2) / 29.1;
+
 					// calculate the distance
-					distance = (duration/2) / 29.1;
+					if (newDistance > 10 && newDistance < 200) {
+						distance = newDistance;
+					}					
 
 					Serial.println(distance);
 

@@ -11,7 +11,7 @@
 // Constants
 const int INTERVAL_UPDATE_MORPH = 125; // in ms
 const int INTERVAL_UPDATE_LS = 375; // in ms
-const int EMPTY_DISTANCE = 50; // in cm
+const int EMPTY_DISTANCE = 70; // in cm
 
 // Variables
 unsigned long currentTime;

@@ -7,7 +7,7 @@
 
 // Constants
 const int PIN_TRIG = 13;
-const int PIN_ECHO = 3;
+const int PIN_ECHO = 10;
 const int INTERVAL_SENSOR = 250;
 const int INTERVAL_SENSOR_SEND = 2;
 const int INTERVAL_SENSOR_RECEIVE = 10;
@@ -65,7 +65,7 @@ void proximityLoop() {
 					// calculate the distance
 					distance = (duration/2) / 29.1;
 
-					Serial.println(distance);
+					// Serial.println(distance);
 
 					updateSensorStatus();
 
