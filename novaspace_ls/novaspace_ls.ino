@@ -2,7 +2,7 @@
  * NOVASPACE - Light & Sound
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
  * @date: 161103
- * @version: 0.24
+ * @version: 0.25
  */
 
 // Includes
@@ -11,7 +11,7 @@
 
 // Constants
 const int INTERVAL_UPDATE_LS = 375; // in ms
-const int EMPTY_DISTANCE = 150;
+const int EMPTY_DISTANCE = 90;
 
 // Variables
 unsigned long currentTime;
@@ -22,7 +22,7 @@ boolean direction;
 void setup() {
 
 	// Start serial for debugging
-	Serial.begin(9600);
+	// Serial.begin(9600);
 
 	// init variables
 	currentTime = 0;

@@ -25,7 +25,7 @@ void proximityLoop() {
 
 		distance = analogRead(PIN_PROXIMITY);
 
-		Serial.println(distance);
+		// Serial.println(distance);
 
 		lastMeasurement = currentTime;
 	}

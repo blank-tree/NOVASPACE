@@ -2,7 +2,7 @@
  * NOVASPACE - Sound
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
  * @date: 161103
- * @version: 0.9
+ * @version: 0.10
  */
 
 
@@ -44,7 +44,7 @@ void soundLoop() {
 	}
 
 	// Write the values to the servos
-	volume.write(map(volumeValue, 0, 180, 180, 0));
+	volume.write(volumeValue);
 	ctrl1.write(map(ctrl1Value, 0, 180, 180, 0));
 
 }
