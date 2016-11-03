@@ -1,14 +1,14 @@
 /**
  * NOVASPACE - Sound
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
- * @date: 161028
- * @version: 0.8
+ * @date: 161103
+ * @version: 0.9
  */
 
 
 // Constants
-const int PIN_SERVO_VOLUME = 5;
-const int PIN_SERVO_CTRL1 = 3;
+const int PIN_SERVO_VOLUME = 9;
+const int PIN_SERVO_CTRL1 = 10;
 const int SOUND_VOLUME_FADE_UP = 5;
 const int SOUND_VOLUME_FADE_DOWN = 10;
 const int SOUND_CTRL1_FADE_UP = 15;

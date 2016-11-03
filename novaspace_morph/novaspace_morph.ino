@@ -2,7 +2,7 @@
  * NOVASPACE - Morph
  * @author: Fernando Obieta - blanktree.ch, Lukas Siegele & Fabrice Spahn
  * @date: 161101
- * @version: 0.24
+ * @version: 0.25
  */
 
 // Includes
